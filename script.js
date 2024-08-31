@@ -1,17 +1,23 @@
-//your JS code here. If required.
 function secondHighest(arr) {
-    // Check if array length is less than 2
-    // If yes, return -Infinity
+    if(arr.length < 2) {
+        return -Infinity;
+    }
 
-    // Initialize two variables: max1 and max2 to -Infinity
+    let max1 = -Infinity;
+    let max2 = -Infinity;
 
-    // Loop through the array
-    // For each element, check if it is greater than max1
-    // If yes, update max2 to be max1, and max1 to be the current element
-    // If no, check if it is greater than max2 and not equal to max1
-    // If yes, update max2 to be the current element
+    for(let i = 0; i < arr.length; i++) {
+        if(arr[i] > max1) {
+            max2 = max1;
+            max1 = arr[i];
+        } else if(arr[i] > max2 && arr[i] != max1) {
+            max2 = arr[i];
+        }
+    }
 
-    // After the loop, check if max2 is still -Infinity (this means all elements in array were the same)
-    // If yes, return -Infinity
-    // If no, return max2
+    if(max2 === -Infinity) {
+        return -Infinity;
+    } else {
+        return max2;
+    }
 }
