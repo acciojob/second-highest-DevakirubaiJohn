@@ -1,7 +1,6 @@
 function secondHighest(arr) {
     if(arr.length < 2) {
-        alert(-Infinity);
-        return;
+        return -Infinity;
     }
 
     let max1 = -Infinity;
@@ -17,8 +16,8 @@ function secondHighest(arr) {
     }
 
     if(max2 === -Infinity) {
-        alert(-Infinity);
+        return -Infinity;
     } else {
-        alert(max2);
+        return max2;
     }
 }
